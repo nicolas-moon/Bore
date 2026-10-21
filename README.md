@@ -352,7 +352,7 @@ The menu should remain intentionally small. The layouts below show the state-spe
 Bore
 
 ● Connected
-nmoon-moose → 127.0.0.1:1080
+{host} → 127.0.0.1:1080
 
 Disconnect
 
@@ -367,7 +367,7 @@ Quit Bore
 Bore
 
 ○ Disconnected
-nmoon-moose → 127.0.0.1:1080
+{host} → 127.0.0.1:1080
 
 Connect
 
@@ -382,7 +382,7 @@ Quit Bore
 Bore
 
 ◌ Connecting…
-nmoon-moose → 127.0.0.1:1080
+{host} → 127.0.0.1:1080
 
 ────────────────
 
@@ -550,7 +550,7 @@ Eventually provide a small native Settings screen containing:
 
 ```text
 SSH Host
-[nmoon-moose]
+[{host}]
 
 SOCKS Port
 [1080]
