@@ -5,7 +5,7 @@ Bore is a lightweight native macOS menu bar application for managing a local SOC
 It replaces repeatedly running:
 
 ```text
-ssh -D 1080 -N nmoon-moose
+ssh -D 1080 -N {host}
 ```
 
 with a simple menu bar toggle.
@@ -20,7 +20,7 @@ Bore should be intentionally small, native, reliable, and focused on doing one t
 
 Provide a macOS menu bar application that allows the user to:
 
-- Start an SSH SOCKS proxy to `nmoon-moose`.
+- Start an SSH SOCKS proxy to `{host}`.
 - Stop the proxy.
 - Immediately see whether the tunnel is connected.
 - Detect when the SSH connection unexpectedly dies.
@@ -33,7 +33,7 @@ The initial version should **not** attempt to become a generic SSH tunnel manage
 Default configuration:
 
 ```text
-SSH Host: nmoon-moose
+SSH Host: {host}
 SOCKS Address: 127.0.0.1
 SOCKS Port: 1080
 ```
@@ -121,7 +121,7 @@ The resulting SSH invocation should be equivalent to:
     -o ExitOnForwardFailure=yes \
     -o ServerAliveInterval=30 \
     -o ServerAliveCountMax=3 \
-    nmoon-moose
+    {host}
 ```
 
 Important requirements:
@@ -154,7 +154,7 @@ known_hosts
 The hostname:
 
 ```text
-nmoon-moose
+{host}
 ```
 
 should be passed directly to SSH exactly as it would be from Terminal.
@@ -162,7 +162,7 @@ should be passed directly to SSH exactly as it would be from Terminal.
 If this works:
 
 ```text
-ssh -D 1080 -N nmoon-moose
+ssh -D 1080 -N {host}
 ```
 
 Bore should use the same underlying SSH configuration.
@@ -580,7 +580,7 @@ Values live in the `com.nmoon.Bore` defaults domain:
 
 | Key               | Type   | Default       |
 |-------------------|--------|---------------|
-| `sshHost`         | string | `nmoon-moose` |
+| `sshHost`         | string | `{host}` |
 | `socksPort`       | int    | `1080`        |
 | `autoReconnect`   | bool   | `true`        |
 | `connectAtLaunch` | bool   | `false`       |
